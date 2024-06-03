@@ -7,15 +7,15 @@ import { SearchComponent } from './search/search.component';
 import { TracksComponent } from './tracks/tracks.component';
 
 const routes: Routes = [
-  {path:'',component:SearchComponent},
-  {path:'artists/:id',component:ArtistsComponent},
-  {path:'albums/:id',component:AlbumsComponent},
-  {path:'tracks/:id',component:TracksComponent},
-  {path:'overview/:id',component:OverviewComponent}
+  { path: '', component: SearchComponent },
+  { path: 'artists/:id', component: ArtistsComponent },
+  { path: 'albums/:id', component: AlbumsComponent },
+  { path: 'tracks/:id', component: TracksComponent },
+  { path: 'overview/:id', component: OverviewComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
