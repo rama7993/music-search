@@ -1,0 +1,21 @@
+<div *ngFor="let artist of artists">
+  <div class="card" style="width: 18rem">
+    <div class="card-header">{{ artist.name }}</div>
+    <img
+      src="artist.images[0].url"
+      class="card-img-top"
+      alt="profile picture"
+    />
+    <div class="card-body">
+      <a [routerLink]="['/overview', artist.id]">Artist Albums</a>
+      <h6>Followers:{{ artist.followers.total }}</h6>
+      <h5>
+        Genre:
+        <span class="badge badge-success" *ngFor="let genre of artist.genres">
+          {{ genre }}</span
+        >
+      </h5>
+      <a class="btn btn-primary" (click)="back()">Back</a>
+    </div>
+  </div>
+</div>

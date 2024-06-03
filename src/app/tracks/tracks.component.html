@@ -1,0 +1,19 @@
+<div *ngFor="let track of tracks">
+    <div class="card" style="width: 18rem;">
+        <img src="{{ track.album.images[1].url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{track.name}}</h5>
+            <audio controls class="embed-responsive-item">
+                <source src="{{ track.preview_url }}">
+            </audio>  
+            
+            <p *ngFor="let artist of track.artists">
+                <a [routerLink]="['/artists', artist.id]">
+                    {{ artist.name }}
+                </a>
+            </p>
+            <a class="btn btn-primary" (click)="back()">Back</a>
+        </div>
+    </div>
+</div>
+
