@@ -11,10 +11,11 @@ import { SpotifyService } from '../services/spotify.service';
 export class AlbumsComponent implements OnInit {
   id!: string;
   albums?: any;
+  loading: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
-    private ss: SpotifyService,
+    private spotifyService: SpotifyService,
     private location: Location
   ) {
     route.params.subscribe((params) => {
@@ -23,9 +24,10 @@ export class AlbumsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ss.getAlbums(this.id).subscribe((resp: any) => {
+    this.spotifyService.getAlbums(this.id).subscribe((resp: any) => {
       console.log(resp);
       this.albums = resp.albums;
+      this.loading = false;
     });
   }
 

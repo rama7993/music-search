@@ -15,7 +15,7 @@ export class OverviewComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute,
-    private ss: SpotifyService,
+    private spotifyService: SpotifyService,
     private location: Location
   ) {
     this.route.params.subscribe((params) => {
@@ -24,10 +24,10 @@ export class OverviewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ss.getOverview(this.id).subscribe((resp: any) => {
-      console.log(resp);
-      this.albums = resp;
-    });
+    // this.spotifyService.getOverview(this.id).subscribe((resp: any) => {
+    //   console.log(resp);
+    //   this.albums = resp;
+    // });
   }
 
   back(): void {

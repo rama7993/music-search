@@ -1,5 +1,6 @@
 <div class="container mt-5">
-  <div class="row">
+  <!-- Album -->
+  <div class="row justify-content-center" *ngIf="albums && albums.length">
     <div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let album of albums">
       <div class="card">
         <img
@@ -20,8 +21,40 @@
               <a [routerLink]="['/tracks', track.id]">{{ track.name }}</a>
             </li>
           </ol>
-
           <p><a class="btn btn-primary" (click)="back()">Back</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shimmer -->
+  <div class="row justify-content-center" *ngIf="loading">
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+      <div class="card">
+        <div class="card-img-top placeholder-glow">
+          <span class="placeholder col-12" style="height: 240px"></span>
+        </div>
+        <div class="card-body">
+          <h3 class="placeholder-glow">
+            <span class="placeholder col-6"></span>
+          </h3>
+          <h6 class="placeholder-glow">
+            <span class="placeholder col-5"></span>
+          </h6>
+          <h5 class="placeholder-glow">
+            <span class="placeholder col-4"></span>
+          </h5>
+          <h4 class="placeholder-glow">
+            <span class="placeholder col-3"></span>
+          </h4>
+          <ol class="list-group list-group-flush">
+            <li
+              class="list-group-item placeholder-glow"
+              *ngFor="let i of [1, 2, 3]"
+            >
+              <span class="placeholder col-8"></span>
+            </li>
+          </ol>
         </div>
       </div>
     </div>

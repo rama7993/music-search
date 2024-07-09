@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { NgxSpinnerModule } from 'ngx-spinner';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArtistsComponent } from './artists/artists.component';
@@ -28,7 +26,6 @@ import { OverviewComponent } from './overview/overview.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
