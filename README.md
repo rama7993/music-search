@@ -28,4 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## GitHub Pages
 
-[Visit the website](https://username.github.io/music-search)
+[Visit the website](https://rama7993.github.io/music-search)
