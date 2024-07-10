@@ -9,7 +9,6 @@ import { ArtistsComponent } from './artists/artists.component';
 import { TracksComponent } from './tracks/tracks.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { SearchComponent } from './search/search.component';
-import { OverviewComponent } from './overview/overview.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { OverviewComponent } from './overview/overview.component';
     TracksComponent,
     AlbumsComponent,
     SearchComponent,
-    OverviewComponent,
   ],
   imports: [
     BrowserModule,
