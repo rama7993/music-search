@@ -1,0 +1,85 @@
+<div class="container mt-5">
+  <!-- Search Form -->
+  <form
+    #searchForm="ngForm"
+    (ngSubmit)="onSubmit(searchForm)"
+    class="d-flex search-bar"
+  >
+    <div class="form-group flex-grow-1">
+      <input
+        type="text"
+        class="form-control search-input"
+        placeholder="Search for a track..."
+        name="search"
+        [(ngModel)]="query"
+      />
+    </div>
+    <button class="btn btn-primary" type="submit">Search</button>
+  </form>
+
+  <!-- Tracks List -->
+  <div *ngIf="tracks?.length">
+    <h1 class="mt-5 section-title">Search Results</h1>
+    <div class="row">
+      <div
+        class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
+        *ngFor="let track of tracks"
+      >
+        <div class="card track-card">
+          <div class="card-header track-header">
+            <a [routerLink]="['/tracks', track.data.id]" class="track-name">
+              {{ track.data.name }}
+            </a>
+          </div>
+          <img
+            [src]="track.data.albumOfTrack.coverArt.sources[0].url"
+            class="card-img-top track-image"
+            alt="Album Cover"
+          />
+          <div class="card-body">
+            <h6>
+              <a
+                [routerLink]="['/albums', track.data.albumOfTrack.id]"
+                class="album-name"
+              >
+                {{ track.data.albumOfTrack.name }}
+              </a>
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shimmer Effect -->
+  <div *ngIf="loading">
+    <h1 class="mt-5 section-title">Searching...</h1>
+    <div class="row">
+      <div
+        class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
+        *ngFor="let _ of [].constructor(10).fill(0)"
+      >
+        <div class="card shimmer-card">
+          <div class="card-header placeholder-glow">
+            <span class="placeholder col-12"></span>
+          </div>
+          <div class="card-img-top placeholder-glow">
+            <span class="placeholder col-12" style="height: 180px"></span>
+          </div>
+          <div class="card-body">
+            <h6>
+              <p class="card-text placeholder-glow">
+                <span class="placeholder col-7"></span>
+              </p>
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- No Data Message -->
+  <div *ngIf="!tracks?.length && !loading">
+    <h4 class="mt-5 no-results">Oops! No tracks found for your search.</h4>
+  </div>
+</div>
