@@ -20,12 +20,13 @@ export class SearchComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
+    //console.log(form.value);
+    this.searchTracks(this.query);
   }
 
   searchTracks(query: string) {
     this.spotifyService.search(this.query, this.type).subscribe((resp: any) => {
-      console.log(resp);
+      //console.log(resp);
       this.tracks = resp.tracks;
       this.loading = false;
     });

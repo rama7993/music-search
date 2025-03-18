@@ -25,7 +25,7 @@ export class AlbumsComponent implements OnInit {
 
   ngOnInit(): void {
     this.spotifyService.getAlbums(this.id).subscribe((resp: any) => {
-      console.log(resp);
+      // console.log(resp);
       this.albums = resp.albums;
       this.loading = false;
     });

@@ -26,7 +26,7 @@ export class TracksComponent implements OnInit {
 
   ngOnInit(): void {
     this.spotifyService.getTracks(this.id).subscribe((resp: any) => {
-      console.log(resp);
+      // console.log(resp);
       this.tracks = resp?.tracks;
       this.loading = false;
     });

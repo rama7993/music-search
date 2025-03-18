@@ -26,7 +26,7 @@ export class ArtistsComponent implements OnInit {
 
   ngOnInit(): void {
     this.spotify.getArtists(this.id).subscribe((resp: any) => {
-      console.log(resp);
+      // console.log(resp);
       this.artists = resp.artists;
       this.loading = false;
     });
