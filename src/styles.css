@@ -1,17 +1,19 @@
 html,
 body {
   height: 100%;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
 }
 
 /* Global Link Styling */
 a {
-  color: #1db954 !important; /* Spotify Green */
+  color: #1db954; /* Spotify Green */
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
 
 a:hover {
-  color: #17a44a !important; /* Darker Green on Hover */
+  color: #17a44a; /* Darker Green on Hover */
   text-decoration: underline;
 }
 
